@@ -52,7 +52,7 @@ function displaydata(arr){
     datacontainer.innerHTML = '';
     for (let i=0 ;i < arr.length; i++ ){
         datacontainer.innerHTML += ` 
-        <div  class=" col-md-3 ">
+        <div  class=" col-md-3 mx-3 ms-3 ">
 <div class="meal position-relative"onclick="categoridmeals('${arr[i].idMeal}')">
         <img src="${arr[i].strMealThumb}" class="w-100" alt="">
   <div class="layer ps-3 pt-5 fs-4 fw-bold">
@@ -74,11 +74,11 @@ $("#Search").on("click",function(){
     searchccontainer.innerHTML= `
     <form class=" pt-5">
                 <div class="row   ">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12 mb-3 ps-5">
                         <input onkeyup="Searchbyname(this.value)" id="searchInput" placeholder="Search By Name" class="form-control bg-transparent  text-white" type="text"/> 
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12 mb-3 ps-5">
                         <input onkeyup="Searchbyfirstletter(this.value)"  placeholder="Search by first letter name" class="form-control bg-transparent text-white " type="text"/> 
                     </div>
                 </div>
@@ -119,7 +119,7 @@ function displayCategories(arr) {
     searchccontainer.innerHTML="";
     for (let i = 0; i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3">
+            <div class="col-md-3 mx-3">
                 <div   onclick="categormeals('${arr[i].strCategory}')"  class="meal   text-black position-relative">
                     <img src="${arr[i].strCategoryThumb}" class="w-100" alt="">
                     <div class="layer ps-3   ">
@@ -148,7 +148,7 @@ function displayMeals(arr) {
 
     for (let i = 0; i <20 && i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3">
+            <div class="col-md-3 mx-3">
                 <div  onclick="categoridmeals('${arr[i].idMeal}')" class="meal text-black position-relative text-center">
                     <img src="${arr[i].strMealThumb}" class="w-100" alt="">
                     <div class="layer ps-3">
@@ -175,42 +175,20 @@ function displayid(arr) {
 
     for (let i = 0; i <20 && i < arr.length; i++) {
         datacontainer.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 mx-3 ps-5">
         <div class="img-idmeal">
             <img class="w-100" src="${arr[i].strMealThumb}" alt="">
         </div>
         <h2 class="text-white">${arr[i].strMeal}</h2>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 mx-3 ps-5">
         <div class="text-idmeal text-white">
        <h2>Instructions</h2>
        <p>${arr[i].strInstructions}</p>
         </div>
         <h3 class="text-white">Area : ${arr[i].strArea}</h3>
         <h3 class="text-white">Category : ${arr[i].strCategory}</h3>
-        <h3 class="text-white">Recipes :</h3>
-        <ul class="list-unstyled d-flex g-3 flex-wrap">
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure1}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure2}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure3}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure4}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure5}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure6}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure7}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure8}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure9}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure10}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure11}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure12}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure13}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure14}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure15}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure16}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure17}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure18}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure19}</li>
-            <li class="alert alert-info m-2 p-1">${arr[i].strMeasure20}</li>
-        </ul>
+      
         <h3 class="text-white">Tags :</h3>
         <a target="_blank" href="${arr[i].strSource}" class="btn btn-success">Source</a>
         <a target="_blank" href="https://www.youtube.com/watch?v=9ytR28QK6I8" class="btn btn-danger">Youtube</a>
@@ -237,7 +215,7 @@ function displayarea(arr) {
     searchccontainer.innerHTML="";
     for (let i = 0; i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3">
+            <div class="col-md-3  ms-5">
                 <div  onclick="areameals('${arr[i].strArea}')" class="meal  text-white position-relative">
                 <i class="fa-solid fa-house-laptop"></i>
                 <h3 class="">${arr[i].strArea}</h3>
@@ -274,11 +252,11 @@ $("#Ingredients").on("click", async function () {
         for (let i = 0; i <20 && i < arr.length; i++) {
             const description = (arr[i].strDescription || "").split(" ").slice(0, 20).join(" ");
             datacontainer.innerHTML += `
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center ">
                     <div  onclick="Ingredientsameals('${arr[i].strIngredient}')" class="meal  text-white position-relative">
                     <i class="fa-solid Ingredients fa-drumstick-bite fa-4x"></i>
                     <h3 class="">${arr[i].strIngredient}</h3>
-                    <p> ${description}...</p>
+                    <p class="mx-3"> ${description}...</p>
                     </div>
                    
                 </div>
