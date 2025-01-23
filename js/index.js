@@ -52,7 +52,7 @@ function displaydata(arr){
     datacontainer.innerHTML = '';
     for (let i=0 ;i < arr.length; i++ ){
         datacontainer.innerHTML += ` 
-        <div  class=" col-md-3 mx-3 ms-3 ">
+        <div  class=" col-md-3 sm-mx-3 sm-ms-3 ">
 <div class="meal position-relative"onclick="categoridmeals('${arr[i].idMeal}')">
         <img src="${arr[i].strMealThumb}" class="w-100" alt="">
   <div class="layer ps-3 pt-5 fs-4 fw-bold">
@@ -117,9 +117,10 @@ $("#Categories").on("click", async function () {
 function displayCategories(arr) {
     datacontainer.innerHTML = ""; 
     searchccontainer.innerHTML="";
+    contactcontainer.innerHTML="";
     for (let i = 0; i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3 mx-3">
+            <div class="col-md-3 sm-mx-3">
                 <div   onclick="categormeals('${arr[i].strCategory}')"  class="meal   text-black position-relative">
                     <img src="${arr[i].strCategoryThumb}" class="w-100" alt="">
                     <div class="layer ps-3   ">
@@ -145,10 +146,11 @@ async function categormeals(category) {
 function displayMeals(arr) {
     datacontainer.innerHTML = "";
     searchccontainer.innerHTML = "";
+    contactcontainer.innerHTML="";
 
     for (let i = 0; i <20 && i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3 mx-3">
+            <div class="col-md-3  sm-mx-3">
                 <div  onclick="categoridmeals('${arr[i].idMeal}')" class="meal text-black position-relative text-center">
                     <img src="${arr[i].strMealThumb}" class="w-100" alt="">
                     <div class="layer ps-3">
@@ -172,16 +174,17 @@ async function categoridmeals(id) {
 function displayid(arr) {
     datacontainer.innerHTML = "";
     searchccontainer.innerHTML = "";
+    contactcontainer.innerHTML="";
 
     for (let i = 0; i <20 && i < arr.length; i++) {
         datacontainer.innerHTML += `
-        <div class="col-md-4 mx-3 ps-5">
+        <div class="col-md-4 col-sm-12 px-3 ps-5">
         <div class="img-idmeal">
             <img class="w-100" src="${arr[i].strMealThumb}" alt="">
         </div>
         <h2 class="text-white">${arr[i].strMeal}</h2>
     </div>
-    <div class="col-md-8 mx-3 ps-5">
+    <div class="col-md-8 col-sm-12 px-3 ps-5">
         <div class="text-idmeal text-white">
        <h2>Instructions</h2>
        <p>${arr[i].strInstructions}</p>
@@ -215,7 +218,7 @@ function displayarea(arr) {
     searchccontainer.innerHTML="";
     for (let i = 0; i < arr.length; i++) {
         datacontainer.innerHTML += `
-            <div class="col-md-3  ms-5">
+            <div class="col-md-3  px-5">
                 <div  onclick="areameals('${arr[i].strArea}')" class="meal  text-white position-relative">
                 <i class="fa-solid fa-house-laptop"></i>
                 <h3 class="">${arr[i].strArea}</h3>
